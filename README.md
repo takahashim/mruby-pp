@@ -16,6 +16,10 @@ add conf.gem to `build_config.rb`:
       conf.gem :github => 'takahashim/mruby-pp'
     end
 
+## Limitation
+
+* This libarary does not support `pretty_print_inspect` yet. You cannot use pp as `Object#inspect`.
+
 ## Using mrbgems
 
 This library depends on these mrbgems:
@@ -29,18 +33,16 @@ This library depends on these mrbgems:
 * mruby-env (github: 'iij/mruby-env')
 * mruby-regexp-pcre (github: 'iij/mruby-regexp-pcre')
 
-## Limitation
-
-* This libarary does not support `pretty_print_inspect` yet. You cannot use pp as `Object#inspect`.
-
 ## License
 
 Same as CRuby's (Ruby's or 2-clause BSDL).
+
 See file COPYING or BSDL.
 
 ## Author
 
 Original library in Cruby is written by Tanaka Akira.
+
 mruby version of this library is ported by Masayoshi Takahashi.
 
 
