@@ -679,6 +679,9 @@ class PP < PrettyPrint
   ##def PP.mcall(obj, mod, meth, *args, &block)
   ##  mod.instance_method(meth).bind(obj).call(*args, &block)
   ##end
+  def PP.mcall_struct_members(obj)
+    obj.class.members
+  end
   # :startdoc:
 
   @sharing_detection = false

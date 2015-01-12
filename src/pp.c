@@ -12,24 +12,6 @@ mrb_pp_any_to_s(mrb_state *mrb, mrb_value obj)
   return mrb_any_to_s(mrb, any_obj);
 }
 
-/* from mrbgems/mruby-struct/src/struct.c */
-mrb_value mrb_struct_members_m(mrb_state *mrb, mrb_value obj);
-/*
- * usage:
- *    PP.mcall_struct_members(self)
- * def:
- *    mod.instance_method(meth).bind(obj).call()
- */
-static mrb_value
-mrb_pp_mcall_struct_members(mrb_state *mrb, mrb_value self)
-{
-  mrb_value st_obj;
-
-  mrb_get_args(mrb, "o", &st_obj);
-
-  return mrb_struct_members_m(mrb, st_obj);
-}
-
 /*
  * usage:
  *    PP.mcall_kernel_class(self)
@@ -72,7 +54,6 @@ mrb_mruby_pp_gem_init(mrb_state* mrb)
 
   mrb_define_class_method(mrb, pp, "any_to_s", mrb_pp_any_to_s, MRB_ARGS_REQ(1));
   mrb_define_class_method(mrb, pp, "mcall_kernel_class", mrb_pp_mcall_kernel_class, MRB_ARGS_REQ(1));
-  mrb_define_class_method(mrb, pp, "mcall_struct_members", mrb_pp_mcall_struct_members, MRB_ARGS_REQ(1));
   mrb_define_class_method(mrb, pp, "mcall_object_inspect", mrb_pp_mcall_object_inspect, MRB_ARGS_REQ(1));
 
 
