@@ -680,7 +680,7 @@ class PP < PrettyPrint
   ##  mod.instance_method(meth).bind(obj).call(*args, &block)
   ##end
   def PP.mcall_struct_members(obj)
-    obj.class.members
+    PP.mcall_kernel_class(obj).members
   end
   # :startdoc:
 
