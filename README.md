@@ -1,5 +1,7 @@
 # mruby-pp
 
+[![Build Status](https://travis-ci.org/takahashim/mruby-pp.svg?branch=master)](https://travis-ci.org/takahashim/mruby-pp)
+
 Pretty-Print library ported from CRuby.
 
 * https://github.com/ruby/ruby/blob/trunk/lib/pp.rb
