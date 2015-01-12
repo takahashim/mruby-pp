@@ -4,7 +4,7 @@
 #include "mruby/variable.h"
 
 static mrb_value
-mrb_pp_any_to_s(mrb_state *mrb, mrb_value obj)
+mrb_pp_mcall_any_to_s(mrb_state *mrb, mrb_value obj)
 {
   mrb_value any_obj;
 
@@ -52,7 +52,7 @@ mrb_mruby_pp_gem_init(mrb_state* mrb)
   prettyprint = mrb_define_class(mrb, "PrettyPrint", mrb->object_class);
   pp = mrb_define_class(mrb, "PP", prettyprint);
 
-  mrb_define_class_method(mrb, pp, "any_to_s", mrb_pp_any_to_s, MRB_ARGS_REQ(1));
+  mrb_define_class_method(mrb, pp, "mcall_any_to_s", mrb_pp_mcall_any_to_s, MRB_ARGS_REQ(1));
   mrb_define_class_method(mrb, pp, "mcall_kernel_class", mrb_pp_mcall_kernel_class, MRB_ARGS_REQ(1));
   mrb_define_class_method(mrb, pp, "mcall_object_inspect", mrb_pp_mcall_object_inspect, MRB_ARGS_REQ(1));
 

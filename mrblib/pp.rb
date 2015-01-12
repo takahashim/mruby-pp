@@ -799,7 +799,7 @@ class PP < PrettyPrint
     # object_id.
     def object_address_group(obj, &block)
       ##str = Kernel.instance_method(:to_s).bind(obj).call
-      str = PP.any_to_s(obj)
+      str = PP.mcall_any_to_s(obj)
       str.chomp!('>')
       group(1, str, '>', &block)
     end
